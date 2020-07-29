@@ -75,7 +75,7 @@ p {
     gap: 1rem;
 }
 
-@media (max-width: 1230px) {
+@media (max-width: 1348px) {
     .cards {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -90,3 +90,7 @@ p {
   body::-webkit-scrollbar {
     display: none;
 }
+
+span{
+    font-size: 14px;
+  }

@@ -5,6 +5,9 @@ body {
     background-size: cover;
     color: rgb(228,242,226);
     font-size: 20px;
+    overflow-y: scroll; 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
 
 .header{
@@ -69,14 +72,22 @@ p{
   text-decoration: underline;
 }
 
-@media (max-width: 970px) {
+@media (max-width: 1340px) {
     .cards {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  @media (max-width: 500px) {
+  @media (max-width: 610px) {
     .cards {
       grid-template-columns: 1fr;
     }
   }
+
+  body::-webkit-scrollbar {
+    display: none;
+}
+
+span{
+  font-size: 14px;
+}
