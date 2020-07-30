@@ -37,10 +37,9 @@ app.get('/search', async (req, res) => {
     }
 })
 
-app.use((req, res, next) => {
+app.use((req, res) => {
     const fullUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
     res.status(404).render('404', { failUrl: fullUrl, favicon: process.env.favicon })
-    next()
 })
 
 app.listen(port, () => {
