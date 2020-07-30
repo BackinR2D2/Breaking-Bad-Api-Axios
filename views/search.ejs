@@ -32,23 +32,28 @@
         <%  } %>
         <% if(name.length === 1){ %>
         <div class="single">
-            <p>Name: <span><%= name[0].name %></span></p>
-            <p>Actor name: <span> <%= name[0].portrayed %> </span></p>
-            <p>Occupation: <span> <%= name[0].occupation %> </span></p>
+            <img src="<%= name[0].img %>" alt="imgs">
+            <p class="name"><%= name[0].name %></p>
+            <p id="nickname">Known as <span><%= name[0].nickname %></span></p>
+            <p id="occupation">Occupation </p>
+            <p id="occ"> <%= name[0].occupation %> </p>
+            <p id="occupation">Actor name </p>
+            <p id="occ"><%= name[0].portrayed %></p>
             <% if(name[0].category.includes('Better Call Saul') || name[0].better_call_saul_appearance.length > 0){ %>
-            <p>Appeared in Better Call Saul</p>
             <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
                 id="bcsLogo" alt="bcs">
             <% } %>
-            <img src="<%= name[0].img %>" alt="img">
         </div>
         <% } else { %>
         <% name.map(e => { %>
         <div class="single">
             <img src="<%= e.img %>" alt="imgs">
             <p class="name"><%= e.name %></p>
-            <p>Occupation: <span> <%= e.occupation %> </span></p>
-            <p>Actor name: <span> <%= e.portrayed %> </span></p>
+            <p id="nickname">Known as <span><%= e.nickname %></span></p>
+            <p id="occupation">Occupation </p>
+            <p id="occ"> <%= e.occupation %> </p>
+            <p id="occupation">Actor name </p>
+            <p id="occ"><%= e.portrayed %></p>
             <% if(e.category.includes('Better Call Saul') || e.better_call_saul_appearance.length > 0){ %>
             <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
                 id="bcsLogo" alt="bcs">

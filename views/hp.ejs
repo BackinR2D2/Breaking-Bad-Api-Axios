@@ -18,12 +18,14 @@
         <% let info = api.data %>
         <% info.map(el => { %>
         <div class="single">
-            <img src="<%= el.img %>" alt="img">
+            <img src="<%= el.img %>" alt="imgs">
             <p class="name"><%= el.name %></p>
-            <p class="nickname"><%= el.nickname %></p>
-            <p>Occupation: <span><%= el.occupation %></span></p>
-            <p>Actor name: <span><%= el.portrayed %></span></p>
-            <% if(el.better_call_saul_appearance.length > 0){ %>
+            <p id="nickname">Known as <span><%= el.nickname %></span></p>
+            <p id="occupation">Occupation </p>
+            <p id="occ"> <%= el.occupation %> </p>
+            <p id="occupation">Actor name </p>
+            <p id="occ"><%= el.portrayed %></p>
+            <% if(el.category.includes('Better Call Saul') || el.better_call_saul_appearance.length > 0){ %>
             <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
                 id="bcsLogo" alt="bcs">
             <% } %>

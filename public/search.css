@@ -9,8 +9,15 @@ body {
 }
 
 #bcsLogo{
+    margin-top: auto;
     width: 50%;
     border-radius: 0;
+}
+
+#nickname{
+    margin-top: -20px;
+    color: gray;
+    margin-bottom: 12%;
 }
 
 .header{
@@ -20,6 +27,7 @@ body {
 }
 
 img{
+    
     width: 28vh;
     /* height: 200px; */
     border-radius: 16px;
@@ -27,10 +35,9 @@ img{
 }
 
 .name{
-    margin-top: 20px;
+    margin-top: 10%;
     font-size: 24px;
     font-weight: 700;
-    text-decoration: underline;
 }
 
 .single{
@@ -39,7 +46,7 @@ img{
     align-items: center;
     flex-direction: column;
     border-radius: 16px;
-    margin: 6%;
+    margin: 8%;
     padding: 4vh;
     box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
   }
@@ -61,6 +68,7 @@ input{
 }
 
 p {
+    text-align: center;
     font-size: 16px;
 }
 
@@ -75,13 +83,20 @@ p {
     gap: 1rem;
 }
 
-@media (max-width: 1348px) {
+@media (max-width: 2037px) {
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+@media (max-width: 1507px) {
     .cards {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
-  @media (max-width: 610px) {
+
+ 
+  @media (max-width: 792px) {
     .cards {
       grid-template-columns: 1fr;
     }
@@ -92,5 +107,19 @@ p {
 }
 
 span{
-    font-size: 14px;
+    font-weight: 700;
   }
+
+#occupation{
+    font-size: 12px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    font-weight: 200;
+}
+
+#occ{
+    margin-top: -20px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 12%;
+}
