@@ -60,10 +60,10 @@ p{
 
 }
 
-.nickname{
+#nickname{
   margin-top: -20px;
-    color: gray;
-    margin-bottom: 12%;
+  color: gray;
+  margin-bottom: 12%;
 }
 
 .name{
