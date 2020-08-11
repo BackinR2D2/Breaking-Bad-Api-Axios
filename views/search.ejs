@@ -11,14 +11,16 @@
     <title>Search section</title>
 </head>
 
-<body>
+<body id="top">
+    <a id="button" href="#top">
+        <img src="top.png" alt="top" class="topIcon">
+    </a>
     <%- include('./partials/navbar') %>
     <div class="header">
         <h1>Searching section!</h1>
     </div>
     <div class="search">
         <form action="search" method="GET">
-
             <input type="text" class="form-control" aria-label="search input" aria-describedby="search"
                 placeholder="Enter name" name="name">
             <button type="submit" class="btn btn-outline-light"> Search </button>
@@ -77,6 +79,7 @@
             '<% } %>'
             const inp = document.querySelector('input')
         </script>
+        <script src="hp.js"></script>
     </div>
 </body>
 
