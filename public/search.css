@@ -23,13 +23,12 @@ body {
 .header{
     text-align: center;
     margin: 6vh;
-    text-decoration: underline;
+    text-transform: capitalize;
 }
 
 img{
     
     width: 28vh;
-    /* height: 200px; */
     border-radius: 16px;
     box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
