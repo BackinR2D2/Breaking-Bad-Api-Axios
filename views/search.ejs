@@ -16,71 +16,91 @@
         <img src="top.png" alt="top" class="topIcon">
     </a>
     <%- include('./partials/navbar') %>
-    <div class="header">
-        <h1>Searching section!</h1>
-    </div>
-    <div class="search">
-        <form action="search" method="GET">
-            <input type="text" class="form-control" aria-label="search input" aria-describedby="search"
-                placeholder="Enter name" name="name">
-            <button type="submit" class="btn btn-outline-light"> Search </button>
-        </form>
-    </div>
-    <div class="cards">
-        <% if(name.length === 0){ %>
-        <div class="single">
-            <p>Character not found.</p>
+        <div class="header">
+            <h1>Searching section</h1>
         </div>
-        <%  } %>
-        <% if(name.length === 1){ %>
-        <div class="single">
-            <img src="<%= name[0].img %>" alt="imgs">
-            <p class="name"><%= name[0].name %></p>
-            <p id="nickname">Known as <span><%= name[0].nickname %></span></p>
-            <p id="occupation">Occupation </p>
-            <p id="occ"> <%= name[0].occupation %> </p>
-            <p id="occupation">Actor name </p>
-            <p id="occ"><%= name[0].portrayed %></p>
-            <% if(name[0].category.includes('Better Call Saul') || name[0].better_call_saul_appearance.length > 0){ %>
-            <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
-                id="bcsLogo" alt="bcs">
-            <% } %>
+        <div class="search">
+            <form action="search" method="GET">
+                <input type="text" class="form-control" aria-label="search input" aria-describedby="search"
+                    placeholder="Enter name" name="name">
+                <button type="submit" class="btn btn-outline-light"> Search </button>
+            </form>
         </div>
-        <% } else { %>
-        <% name.map(e => { %>
-        <div class="single">
-            <img src="<%= e.img %>" alt="imgs">
-            <p class="name"><%= e.name %></p>
-            <p id="nickname">Known as <span><%= e.nickname %></span></p>
-            <p id="occupation">Occupation </p>
-            <p id="occ"> <%= e.occupation %> </p>
-            <p id="occupation">Actor name </p>
-            <p id="occ"><%= e.portrayed %></p>
-            <% if(e.category.includes('Better Call Saul') || e.better_call_saul_appearance.length > 0){ %>
-            <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
-                id="bcsLogo" alt="bcs">
-            <% } %>
+        <div class="cards">
+            <% if(name.length===0){ %>
+                <div class="single">
+                    <p>Character not found.</p>
+                </div>
+                <% } %>
+                    <% if(name.length===1){ %>
+                        <div class="single">
+                            <img src="<%= name[0].img %>" alt="imgs">
+                            <p class="name">
+                                <%= name[0].name %>
+                            </p>
+                            <p id="nickname">Known as <span>
+                                    <%= name[0].nickname %>
+                                </span></p>
+                            <p id="occupation">Occupation </p>
+                            <p id="occ">
+                                <%= name[0].occupation %>
+                            </p>
+                            <p id="occupation">Actor name </p>
+                            <p id="occ">
+                                <%= name[0].portrayed %>
+                            </p>
+                            <% if(name[0].category.includes('Better Call Saul') &&
+                                name[0].better_call_saul_appearance.length> 0){ %>
+                                <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
+                                    id="bcsLogo" alt="bcs">
+                                <% } %>
+                        </div>
+                        <% } else { %>
+                            <% name.map(e=> { %>
+                                <div class="single">
+                                    <img src="<%= e.img %>" alt="imgs">
+                                    <p class="name">
+                                        <%= e.name %>
+                                    </p>
+                                    <p id="nickname">Known as <span>
+                                            <%= e.nickname %>
+                                        </span></p>
+                                    <p id="occupation">Occupation </p>
+                                    <p id="occ">
+                                        <%= e.occupation %>
+                                    </p>
+                                    <p id="occupation">Actor name </p>
+                                    <p id="occ">
+                                        <%= e.portrayed %>
+                                    </p>
+                                    <% if(e.category.includes('Better Call Saul') &&
+                                        e.better_call_saul_appearance.length> 0){ %>
+                                        <img src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2014/06/BCS-S5_white-logo.png"
+                                            id="bcsLogo" alt="bcs">
+                                        <% } %>
+                                </div>
+                                <% }) %>
+                                    <% } %>
+                                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                                            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                                            crossorigin="anonymous"></script>
+                                        <script
+                                            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                                            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                                            crossorigin="anonymous"></script>
+                                        <script
+                                            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                                            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                                            crossorigin="anonymous"></script>
+                                        <script>
+                                            '<% if(name.length > 0){ %>'
+                                            document.body.style.backgroundPosition = 'center'
+                                            document.body.style.backgroundSize = 'cover'
+                                            '<% } %>'
+                                            const inp = document.querySelector('input')
+                                        </script>
+                                        <script src="hp.js"></script>
         </div>
-        <% }) %>
-        <% } %>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
-        <script>
-            '<% if(name.length > 0){ %>'
-            document.body.style.backgroundPosition = 'center'
-            document.body.style.backgroundSize = 'cover'
-            '<% } %>'
-            const inp = document.querySelector('input')
-        </script>
-        <script src="hp.js"></script>
-    </div>
 </body>
 
 </html>
