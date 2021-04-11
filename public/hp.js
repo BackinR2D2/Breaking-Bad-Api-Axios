@@ -1,4 +1,5 @@
 const btn = $('#button');
+const btsBtn = document.querySelector('.btsBtn');
 
 $(window).scroll(function () {
     if ($(window).scrollTop() > 300) {
@@ -7,3 +8,7 @@ $(window).scroll(function () {
         btn.removeClass('show');
     }
 });
+
+btsBtn.addEventListener('click', () => {
+    window.location.href = '/search';
+})

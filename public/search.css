@@ -164,3 +164,10 @@ span{
     text-align: end;
   }
   
+  .btns {
+    padding: 24px;
+  }
+
+  .btsBtn {
+    margin: 12px;
+  }
